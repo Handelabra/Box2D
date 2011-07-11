@@ -1110,14 +1110,18 @@ void b2World::DrawJoint(b2Joint* joint)
             b2Color color(1.0f, 0.0f, 0.0f);
             m_debugDraw->DrawCircle(p2, 0.005, color);
             m_debugDraw->DrawCircle(p2, 0.035, color);
+            
+            b2Color color2(0.5f, 0.8f, 0.8f);
+            m_debugDraw->DrawSegment(x1, p1, color2);
+            m_debugDraw->DrawSegment(p1, p2, color2);
+            m_debugDraw->DrawSegment(x2, p2, color2);
         }
         break;
 
     default:
-		//m_debugDraw->DrawSegment(x1, p1, color);
-		//m_debugDraw->DrawSegment(p1, p2, color);
-		//m_debugDraw->DrawSegment(x2, p2, color);
-        break;
+		m_debugDraw->DrawSegment(x1, p1, color);
+		m_debugDraw->DrawSegment(p1, p2, color);
+		m_debugDraw->DrawSegment(x2, p2, color);
 	}
 }
 
