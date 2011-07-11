@@ -21,6 +21,7 @@
 #include <Box2D/Dynamics/b2Fixture.h>
 #include <Box2D/Dynamics/b2Island.h>
 #include <Box2D/Dynamics/Joints/b2PulleyJoint.h>
+#include <Box2D/Dynamics/Joints/b2RevoluteJoint.h>
 #include <Box2D/Dynamics/Contacts/b2Contact.h>
 #include <Box2D/Dynamics/Contacts/b2ContactSolver.h>
 #include <Box2D/Collision/b2Collision.h>
@@ -1103,11 +1104,20 @@ void b2World::DrawJoint(b2Joint* joint)
 	case e_mouseJoint:
 		// don't draw this
 		break;
+    
+    case e_revoluteJoint:
+        {
+            b2Color color(1.0f, 0.0f, 0.0f);
+            m_debugDraw->DrawCircle(p2, 0.005, color);
+            m_debugDraw->DrawCircle(p2, 0.035, color);
+        }
+        break;
 
-	default:
-		m_debugDraw->DrawSegment(x1, p1, color);
-		m_debugDraw->DrawSegment(p1, p2, color);
-		m_debugDraw->DrawSegment(x2, p2, color);
+    default:
+		//m_debugDraw->DrawSegment(x1, p1, color);
+		//m_debugDraw->DrawSegment(p1, p2, color);
+		//m_debugDraw->DrawSegment(x2, p2, color);
+        break;
 	}
 }
 
