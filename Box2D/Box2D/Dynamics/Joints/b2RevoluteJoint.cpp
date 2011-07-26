@@ -435,6 +435,11 @@ void b2RevoluteJoint::SetMotorSpeed(float32 speed)
 	m_motorSpeed = speed;
 }
 
+float32 b2RevoluteJoint::GetMaxMotorTorque() const
+{
+	return m_maxMotorTorque;
+}
+
 void b2RevoluteJoint::SetMaxMotorTorque(float32 torque)
 {
 	m_bodyA->SetAwake(true);

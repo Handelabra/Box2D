@@ -126,6 +126,9 @@ public:
 	/// Get the motor speed in radians per second.
 	float32 GetMotorSpeed() const;
 
+    /// Get the maximum motor torque, usually in N-m.
+	float32 GetMaxMotorTorque() const;
+    
 	/// Set the maximum motor torque, usually in N-m.
 	void SetMaxMotorTorque(float32 torque);
 
