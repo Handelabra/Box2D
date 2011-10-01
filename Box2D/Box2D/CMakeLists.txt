@@ -18,13 +18,13 @@ set(BOX2D_Collision_HDRS
 set(BOX2D_Shapes_SRCS
 	Collision/Shapes/b2CircleShape.cpp
 	Collision/Shapes/b2EdgeShape.cpp
-	Collision/Shapes/b2LoopShape.cpp
+	Collision/Shapes/b2ChainShape.cpp
 	Collision/Shapes/b2PolygonShape.cpp
 )
 set(BOX2D_Shapes_HDRS
 	Collision/Shapes/b2CircleShape.h
 	Collision/Shapes/b2EdgeShape.h
-	Collision/Shapes/b2LoopShape.h
+	Collision/Shapes/b2ChainShape.h
 	Collision/Shapes/b2PolygonShape.h
 	Collision/Shapes/b2Shape.h
 )
@@ -69,8 +69,8 @@ set(BOX2D_Contacts_SRCS
 	Dynamics/Contacts/b2PolygonAndCircleContact.cpp
 	Dynamics/Contacts/b2EdgeAndCircleContact.cpp
 	Dynamics/Contacts/b2EdgeAndPolygonContact.cpp
-	Dynamics/Contacts/b2LoopAndCircleContact.cpp
-	Dynamics/Contacts/b2LoopAndPolygonContact.cpp
+	Dynamics/Contacts/b2ChainAndCircleContact.cpp
+	Dynamics/Contacts/b2ChainAndPolygonContact.cpp
 	Dynamics/Contacts/b2PolygonContact.cpp
 )
 set(BOX2D_Contacts_HDRS
@@ -80,8 +80,8 @@ set(BOX2D_Contacts_HDRS
 	Dynamics/Contacts/b2PolygonAndCircleContact.h
 	Dynamics/Contacts/b2EdgeAndCircleContact.h
 	Dynamics/Contacts/b2EdgeAndPolygonContact.h
-	Dynamics/Contacts/b2LoopAndCircleContact.h
-	Dynamics/Contacts/b2LoopAndPolygonContact.h
+	Dynamics/Contacts/b2ChainAndCircleContact.h
+	Dynamics/Contacts/b2ChainAndPolygonContact.h
 	Dynamics/Contacts/b2PolygonContact.h
 )
 set(BOX2D_Joints_SRCS
@@ -170,17 +170,15 @@ if(BOX2D_BUILD_STATIC)
 	)
 endif()
 
-if(MSVC)
-	# These are used to create visual studio folders.
-	source_group(Collision FILES ${BOX2D_Collision_SRCS} ${BOX2D_Collision_HDRS})
-	source_group(Collision\\Shapes FILES ${BOX2D_Shapes_SRCS} ${BOX2D_Shapes_HDRS})
-	source_group(Common FILES ${BOX2D_Common_SRCS} ${BOX2D_Common_HDRS})
-	source_group(Dynamics FILES ${BOX2D_Dynamics_SRCS} ${BOX2D_Dynamics_HDRS})
-	source_group(Dynamics\\Contacts FILES ${BOX2D_Contacts_SRCS} ${BOX2D_Contacts_HDRS})
-	source_group(Dynamics\\Joints FILES ${BOX2D_Joints_SRCS} ${BOX2D_Joints_HDRS})
-	source_group(Include FILES ${BOX2D_General_HDRS})
-	source_group(Rope FILES ${BOX2D_Rope_SRCS} ${BOX2D_Rope_HDRS})
-endif()
+# These are used to create visual studio folders.
+source_group(Collision FILES ${BOX2D_Collision_SRCS} ${BOX2D_Collision_HDRS})
+source_group(Collision\\Shapes FILES ${BOX2D_Shapes_SRCS} ${BOX2D_Shapes_HDRS})
+source_group(Common FILES ${BOX2D_Common_SRCS} ${BOX2D_Common_HDRS})
+source_group(Dynamics FILES ${BOX2D_Dynamics_SRCS} ${BOX2D_Dynamics_HDRS})
+source_group(Dynamics\\Contacts FILES ${BOX2D_Contacts_SRCS} ${BOX2D_Contacts_HDRS})
+source_group(Dynamics\\Joints FILES ${BOX2D_Joints_SRCS} ${BOX2D_Joints_HDRS})
+source_group(Include FILES ${BOX2D_General_HDRS})
+source_group(Rope FILES ${BOX2D_Rope_SRCS} ${BOX2D_Rope_HDRS})
 
 if(BOX2D_INSTALL)
 	# install headers

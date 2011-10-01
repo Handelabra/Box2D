@@ -21,7 +21,7 @@
 
 /// This is a test of typical character collision scenarios. This does not
 /// show how you should implement a character in your application.
-
+/// Instead this is used to test smooth collision on edge chains.
 class CharacterCollision : public Test
 {
 public:
@@ -53,6 +53,22 @@ public:
 			ground->CreateFixture(&shape, 0.0f);
 		}
 
+		// Chain shape
+		{
+			b2BodyDef bd;
+			bd.angle = 0.25f * b2_pi;
+			b2Body* ground = m_world->CreateBody(&bd);
+
+			b2Vec2 vs[4];
+			vs[0].Set(5.0f, 7.0f);
+			vs[1].Set(6.0f, 8.0f);
+			vs[2].Set(7.0f, 8.0f);
+			vs[3].Set(8.0f, 7.0f);
+			b2ChainShape shape;
+			shape.CreateChain(vs, 4);
+			ground->CreateFixture(&shape, 0.0f);
+		}
+
 		// Square tiles. This shows that adjacency shapes may
 		// have non-smooth collision. There is no solution
 		// to this problem.
@@ -79,8 +95,8 @@ public:
 			vs[1].Set(1.0f, 3.0f);
 			vs[2].Set(1.0f, 5.0f);
 			vs[3].Set(-1.0f, 5.0f);
-			b2LoopShape shape;
-			shape.Create(vs, 4);
+			b2ChainShape shape;
+			shape.CreateLoop(vs, 4);
 			ground->CreateFixture(&shape, 0.0f);
 		}
 
@@ -101,8 +117,8 @@ public:
 			vs[7].Set(-4.0f, 3.0f);
 			vs[8].Set(-6.0f, 2.0f);
 			vs[9].Set(-6.0f, 0.0f);
-			b2LoopShape shape;
-			shape.Create(vs, 10);
+			b2ChainShape shape;
+			shape.CreateLoop(vs, 10);
 			ground->CreateFixture(&shape, 0.0f);
 		}
 
@@ -190,16 +206,39 @@ public:
 			fd.density = 20.0f;
 			body->CreateFixture(&fd);
 		}
+
+		// Circle character
+		{
+			b2BodyDef bd;
+			bd.position.Set(-7.0f, 6.0f);
+			bd.type = b2_dynamicBody;
+			bd.allowSleep = false;
+
+			m_character = m_world->CreateBody(&bd);
+
+			b2CircleShape shape;
+			shape.m_radius = 0.25f;
+
+			b2FixtureDef fd;
+			fd.shape = &shape;
+			fd.density = 20.0f;
+			fd.friction = 1.0f;
+			m_character->CreateFixture(&fd);
+		}
 	}
 
 	void Step(Settings* settings)
 	{
+		b2Vec2 v = m_character->GetLinearVelocity();
+		v.x = -5.0f;
+		m_character->SetLinearVelocity(v);
+
 		Test::Step(settings);
 		m_debugDraw.DrawString(5, m_textLine, "This tests various character collision shapes.");
 		m_textLine += 15;
 		m_debugDraw.DrawString(5, m_textLine, "Limitation: square and hexagon can snag on aligned boxes.");
 		m_textLine += 15;
-		m_debugDraw.DrawString(5, m_textLine, "Feature: loops have smooth collision inside and out.");
+		m_debugDraw.DrawString(5, m_textLine, "Feature: edge chains have smooth collision inside and out.");
 		m_textLine += 15;
 	}
 
@@ -207,6 +246,8 @@ public:
 	{
 		return new CharacterCollision;
 	}
+
+	b2Body* m_character;
 };
 
 #endif

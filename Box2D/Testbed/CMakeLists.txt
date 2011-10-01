@@ -13,6 +13,7 @@ set(Testbed_Framework_SRCS
 #define the test files.
 set(Testbed_Tests_SRCS
 	Tests/TestEntries.cpp
+	Tests/AddPair.h
 	Tests/ApplyForce.h
 	Tests/BodyTypes.h
 	Tests/Breakable.h
@@ -29,6 +30,7 @@ set(Testbed_Tests_SRCS
 	Tests/ContinuousTest.h
 	Tests/DistanceTest.h
 	Tests/Dominos.h
+	Tests/DumpShell.h
 	Tests/DynamicTreeTest.h
 	Tests/EdgeShapes.h
 	Tests/EdgeTest.h
@@ -71,8 +73,7 @@ if(APPLE)
 	include_directories( /usr/X11/include )
 	link_directories( /usr/X11/lib )
 	set (OPENGL_LIBRARIES GL GLU GLUT X11)
-#Maybe this should be WIN32 instead of just MINGW?
-elseif(MINGW)
+elseif(WIN32)
 	set (ADDITIONAL_LIBRARIES winmm)
 endif(APPLE)
 

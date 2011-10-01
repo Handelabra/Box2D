@@ -18,10 +18,17 @@
 
 #include "../Framework/Test.h"
 #include "../Framework/Render.h"
-#include "../../freeglut/GL/glut.h"
+
+#ifdef __APPLE__
+	#include <GLUT/glut.h>
+#else
+	#include "freeglut/freeglut.h"
+#endif
+
 #include <cstring>
 using namespace std;
 
+#include "AddPair.h"
 #include "ApplyForce.h"
 #include "BodyTypes.h"
 #include "Breakable.h"
@@ -36,8 +43,10 @@ using namespace std;
 #include "CollisionProcessing.h"
 #include "CompoundShapes.h"
 #include "Confined.h"
+#include "ConvexHull.h"
 #include "DistanceTest.h"
 #include "Dominos.h"
+#include "DumpShell.h"
 #include "DynamicTreeTest.h"
 #include "EdgeShapes.h"
 #include "EdgeTest.h"
@@ -60,6 +69,7 @@ using namespace std;
 #include "TheoJansen.h"
 #include "Tiles.h"
 #include "TimeOfImpact.h"
+#include "Tumbler.h"
 #include "VaryingFriction.h"
 #include "VaryingRestitution.h"
 #include "VerticalStack.h"
@@ -67,10 +77,17 @@ using namespace std;
 
 TestEntry g_testEntries[] =
 {
+	{"Convex Hull", ConvexHull::Create},
+	{"Varying Restitution", VaryingRestitution::Create},
+	{"Tumbler", Tumbler::Create},
+	{"Tiles", Tiles::Create},
+	{"Dump Shell", DumpShell::Create},
+	{"Gears", Gears::Create},
+	{"Cantilever", Cantilever::Create},
+	{"Character Collision", CharacterCollision::Create},
+	{"Edge Test", EdgeTest::Create},
 	{"Body Types", BodyTypes::Create},
 	{"Shape Editing", ShapeEditing::Create},
-	{"Tiles", Tiles::Create},
-	{"Gears", Gears::Create},
 	{"Car", Car::Create},
 	{"Apply Force", ApplyForce::Create},
 	{"Prismatic", Prismatic::Create},
@@ -82,8 +99,6 @@ TestEntry g_testEntries[] =
 	//{"Rope", Rope::Create},
 	{"Web", Web::Create},
 	{"RopeJoint", RopeJoint::Create},
-	{"Character Collision", CharacterCollision::Create},
-	{"Edge Test", EdgeTest::Create},
 	{"One-Sided Platform", OneSidedPlatform::Create},
 	{"Pinball", Pinball::Create},
 	{"Bullet Test", BulletTest::Create},
@@ -92,11 +107,9 @@ TestEntry g_testEntries[] =
 	{"Ray-Cast", RayCast::Create},
 	{"Confined", Confined::Create},
 	{"Pyramid", Pyramid::Create},
-	{"Varying Restitution", VaryingRestitution::Create},
 	{"Theo Jansen's Walker", TheoJansen::Create},
 	{"Edge Shapes", EdgeShapes::Create},
 	{"PolyCollision", PolyCollision::Create},
-	{"Cantilever", Cantilever::Create},
 	{"Bridge", Bridge::Create},
 	{"Breakable", Breakable::Create},
 	{"Chain", Chain::Create},
@@ -109,5 +122,6 @@ TestEntry g_testEntries[] =
 	{"Sensor Test", SensorTest::Create},
 	{"Slider Crank", SliderCrank::Create},
 	{"Varying Friction", VaryingFriction::Create},
+	{"Add Pair Stress Test", AddPair::Create},
 	{NULL, NULL}
 };
