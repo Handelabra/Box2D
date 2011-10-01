@@ -889,6 +889,9 @@
 /* Begin PBXProject section */
 		80FF01C9141C3D980059E59D /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 80FF01CC141C3D980059E59D /* Build configuration list for PBXProject "Box2D" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -1052,7 +1055,7 @@
 			};
 			name = Debug;
 		};
-		80BB8903141C3E1800F1753A /* Release */ = {
+		80BB8903141C3E1800F1753A /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
@@ -1061,7 +1064,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		80BB8912141C3E2700F1753A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1070,12 +1073,12 @@
 			};
 			name = Debug;
 		};
-		80BB8913141C3E2700F1753A /* Release */ = {
+		80BB8913141C3E2700F1753A /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		80BB8920141C3E3600F1753A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1085,19 +1088,19 @@
 			};
 			name = Debug;
 		};
-		80BB8921141C3E3600F1753A /* Release */ = {
+		80BB8921141C3E3600F1753A /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_WARN_UNUSED_VALUE = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		80FF01D4141C3D980059E59D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(VALID_ARCHS)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1108,37 +1111,32 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../..;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 			};
 			name = Debug;
 		};
-		80FF01D5141C3D980059E59D /* Release */ = {
+		80FF01D5141C3D980059E59D /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(VALID_ARCHS)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../..;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		80FF01D7141C3D980059E59D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1148,13 +1146,65 @@
 			};
 			name = Debug;
 		};
-		80FF01D8141C3D980059E59D /* Release */ = {
+		80FF01D8141C3D980059E59D /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
-			name = Release;
+			name = Cupcakes;
+		};
+		FD0A30C5143796F0002C2B02 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(VALID_ARCHS)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../..;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+			};
+			name = Distribution;
+		};
+		FD0A30C6143796F0002C2B02 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Distribution;
+		};
+		FD0A30C7143796F0002C2B02 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Distribution;
+		};
+		FD0A30C8143796F0002C2B02 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Distribution;
+		};
+		FD0A30C9143796F0002C2B02 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_UNUSED_VALUE = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Distribution;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1163,46 +1213,51 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80BB8902141C3E1800F1753A /* Debug */,
-				80BB8903141C3E1800F1753A /* Release */,
+				80BB8903141C3E1800F1753A /* Cupcakes */,
+				FD0A30C7143796F0002C2B02 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		80BB8911141C3E2700F1753A /* Build configuration list for PBXNativeTarget "HelloWorld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80BB8912141C3E2700F1753A /* Debug */,
-				80BB8913141C3E2700F1753A /* Release */,
+				80BB8913141C3E2700F1753A /* Cupcakes */,
+				FD0A30C8143796F0002C2B02 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		80BB891F141C3E3600F1753A /* Build configuration list for PBXNativeTarget "Testbed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80BB8920141C3E3600F1753A /* Debug */,
-				80BB8921141C3E3600F1753A /* Release */,
+				80BB8921141C3E3600F1753A /* Cupcakes */,
+				FD0A30C9143796F0002C2B02 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		80FF01CC141C3D980059E59D /* Build configuration list for PBXProject "Box2D" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80FF01D4141C3D980059E59D /* Debug */,
-				80FF01D5141C3D980059E59D /* Release */,
+				80FF01D5141C3D980059E59D /* Cupcakes */,
+				FD0A30C5143796F0002C2B02 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		80FF01D6141C3D980059E59D /* Build configuration list for PBXNativeTarget "Box2D" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80FF01D7141C3D980059E59D /* Debug */,
-				80FF01D8141C3D980059E59D /* Release */,
+				80FF01D8141C3D980059E59D /* Cupcakes */,
+				FD0A30C6143796F0002C2B02 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 /* End XCConfigurationList section */
 	};

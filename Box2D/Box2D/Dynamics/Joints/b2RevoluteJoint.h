@@ -140,7 +140,6 @@ public:
     
 	/// Set the maximum motor torque, usually in N-m.
 	void SetMaxMotorTorque(float32 torque);
-	float32 GetMaxMotorTorque() const { return m_maxMotorTorque; }
 
 	/// Get the reaction force given the inverse time step.
 	/// Unit is N.
