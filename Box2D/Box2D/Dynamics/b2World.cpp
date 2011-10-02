@@ -1129,8 +1129,8 @@ void b2World::DrawJoint(b2Joint* joint)
     case e_revoluteJoint:
         {
             b2Color color(1.0f, 0.0f, 0.0f);
-            m_debugDraw->DrawCircle(p2, 0.005, color);
-            m_debugDraw->DrawCircle(p2, 0.035, color);
+            m_debugDraw->DrawCircle(p2, 0.005f, color);
+            m_debugDraw->DrawCircle(p2, 0.035f, color);
             
             b2Color color2(0.5f, 0.8f, 0.8f);
             m_debugDraw->DrawSegment(x1, p1, color2);
