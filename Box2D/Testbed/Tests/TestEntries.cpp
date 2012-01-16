@@ -44,6 +44,7 @@ using namespace std;
 #include "CompoundShapes.h"
 #include "Confined.h"
 #include "ConvexHull.h"
+#include "ConveyorBelt.h"
 #include "DistanceTest.h"
 #include "Dominos.h"
 #include "DumpShell.h"
@@ -60,7 +61,6 @@ using namespace std;
 #include "Pyramid.h"
 #include "RayCast.h"
 #include "Revolute.h"
-//#include "Rope.h"
 #include "RopeJoint.h"
 #include "SensorTest.h"
 #include "ShapeEditing.h"
@@ -77,12 +77,14 @@ using namespace std;
 
 TestEntry g_testEntries[] =
 {
+	{"Ray-Cast", RayCast::Create},
+	{"Conveyor Belt", ConveyorBelt::Create},
+	{"Gears", Gears::Create},
 	{"Convex Hull", ConvexHull::Create},
 	{"Varying Restitution", VaryingRestitution::Create},
 	{"Tumbler", Tumbler::Create},
 	{"Tiles", Tiles::Create},
 	{"Dump Shell", DumpShell::Create},
-	{"Gears", Gears::Create},
 	{"Cantilever", Cantilever::Create},
 	{"Character Collision", CharacterCollision::Create},
 	{"Edge Test", EdgeTest::Create},
@@ -96,7 +98,6 @@ TestEntry g_testEntries[] =
 	{"Revolute", Revolute::Create},
 	{"Pulleys", Pulleys::Create},
 	{"Polygon Shapes", PolyShapes::Create},
-	//{"Rope", Rope::Create},
 	{"Web", Web::Create},
 	{"RopeJoint", RopeJoint::Create},
 	{"One-Sided Platform", OneSidedPlatform::Create},
@@ -104,7 +105,6 @@ TestEntry g_testEntries[] =
 	{"Bullet Test", BulletTest::Create},
 	{"Continuous Test", ContinuousTest::Create},
 	{"Time of Impact", TimeOfImpact::Create},
-	{"Ray-Cast", RayCast::Create},
 	{"Confined", Confined::Create},
 	{"Pyramid", Pyramid::Create},
 	{"Theo Jansen's Walker", TheoJansen::Create},
